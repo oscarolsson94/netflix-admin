@@ -24,7 +24,7 @@ import NewList from "./pages/newList/NewList";
 function App() {
   const { user } = useContext(AuthContext);
   return (
-    <Router basename="/">
+    <Router>
       <Switch>
         <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         {user && (
