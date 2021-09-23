@@ -12,7 +12,7 @@ import {
 } from "./UserActions";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_ADMIN_URL,
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 export const getUsers = async (dispatch) => {
