@@ -55,7 +55,8 @@ export default function Home() {
       }
     };
     getStats();
-  }, [MONTHS, axiosInstance]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [MONTHS]);
 
   return (
     <div className="home">
