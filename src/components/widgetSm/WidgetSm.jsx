@@ -6,10 +6,14 @@ import axios from "axios";
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
 
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get("/users?new=true", {
+        const res = await axiosInstance.get("/users?new=true", {
           headers: {
             token:
               "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
@@ -21,6 +25,7 @@ export default function WidgetSm() {
       }
     };
     getNewUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="widgetSm">
